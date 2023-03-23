@@ -1,11 +1,14 @@
-import Texto from "./components/Texto"
+import React from 'react'
+import Comment from './components/Comment'
 
 function App() {
     return (
-        <div>
-            <h1>Olá React!</h1>
-            <Texto />
-        </div>
+        <>
+            <h1>Comentários</h1>
+            <Comment title="Comentário Um"  author="Victor Parizio"/>
+            <Comment title="Comentário Dois" author="João Ribeiro"/>
+            <Comment title="Comentário Três" author="Ana Silva"/>
+        </>
     )
 }
 
