@@ -10,15 +10,12 @@ import ComponenteQuatro from './components/ComponenteQuatro'
 function App() {
     return (
         <>
-            <ComponenteQuatro titulo="Componente quatro">
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
-            </ComponenteQuatro>
+            <ComponenteQuatro titulo="Componente quatro" />
+
             <ComponenteTres titulo="Componente três" subtitulo="Texto do componente três" />
+
             <ComponeteDois />
+
             <ComponenteUm />
         </>
     )
