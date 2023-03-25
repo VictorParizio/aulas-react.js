@@ -7,15 +7,15 @@ export default function (props) {
             <p className="titulo">Titulo: {props.titulo}</p>
             <p>Nome: {props.valor} </p>
 
-            <CondicaoIf condicao={props.valor == "João"}>
+            <CondicaoIf condicao={props.valor === "João"}>
                 <p>Verdadeiro, é o meu nome</p>
             </CondicaoIf>
 
-            <CondicaoIf condicao={props.valor == "Ana"}>
+            <CondicaoIf condicao={props.valor === "Ana"}>
                 <p>É a minha irmã</p>
             </CondicaoIf>
 
-            <CondicaoIf condicao={props.valor != "João" && props.valor != "Ana"}>
+            <CondicaoIf condicao={props.valor !== "João" && props.valor !== "Ana"}>
                 <p>Desconheço este nome</p>
             </CondicaoIf>
 

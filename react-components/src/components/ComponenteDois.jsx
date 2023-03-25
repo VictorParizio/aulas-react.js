@@ -1,6 +1,6 @@
 import React from "react";
 
-const ComponeteDois = () => {
+const ComponenteDois = () => {
     return (
         <div className="componente">
             <p className='titulo'>Título: Componente dois</p>
@@ -8,4 +8,4 @@ const ComponeteDois = () => {
     )
 }
 
-export default ComponeteDois
+export default ComponenteDois
