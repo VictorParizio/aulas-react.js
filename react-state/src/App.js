@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 export default function App() {
 
-    const [valor, setValor] = useState(100)
+    const [valor, setValor] = useState(()=>{
+        return 1000
+    })
 
     function diminuir() {
         setValor(valor => valor - 1)
