@@ -2,24 +2,22 @@ import React, { useState } from "react";
 
 export default function App() {
 
-    const [valor, setValor] = useState(()=>{
-        return 1000
+    const [name, setName] = useState(() => {
+        return "João"
     })
 
-    function diminuir() {
-        setValor(valor => valor - 1)
-    }
-
-    function aumentar() {
-        setValor(valor => valor + 1)
+    function change() {
+        setName(() => {
+            return "Joaquim"
+        })
     }
 
     return (
         <>
             <h1>React Hooks - useState</h1>
-            <button onClick={diminuir}>Diminuir</button>
-            <span>{valor}</span>
-            <button onClick={aumentar}>Aumentar</button>
+            <hr />
+            <h3>Nome: {name}</h3>
+            <button onClick={change} >Alterar</button>
         </>
     )
 }
