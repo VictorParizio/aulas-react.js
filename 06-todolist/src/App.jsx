@@ -13,6 +13,10 @@ export default function App() {
     const inputRef = useRef()
 
     function adicionarTarefa() {
+        if(tarefa === ''){
+            return alert('Adicione um texto')
+        }
+        
         setListaTarefas(old => {
             return [...old, { id: idTarefa.current, texto: tarefa }]
         })
