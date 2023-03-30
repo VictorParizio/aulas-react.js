@@ -18,6 +18,13 @@ export default function App() {
         idTarefa.current++
     }
 
+    function limparTarefas(){
+        setListaTarefas(old => {
+            return []
+        })
+        idTarefa.current = 0
+    }
+
     return (
         <>
             <h3>Gerenciador de Tarefas</h3>
@@ -25,7 +32,7 @@ export default function App() {
             <input type="text" value={tarefa} onChange={e => setTarefa(e.target.value)} />
             <div>
                 <button onClick={adicionarTarefa} >Adicionar</button>
-                <button>Limpar Tudo</button>
+                <button onClick={limparTarefas}>Limpar Tudo</button>
             </div>
             <hr />
             <p>Tarefas:</p>
