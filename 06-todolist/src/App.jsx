@@ -10,12 +10,15 @@ export default function App() {
     })
 
     const idTarefa = useRef(0)
+    const inputRef = useRef()
 
     function adicionarTarefa() {
         setListaTarefas(old => {
             return [...old, { id: idTarefa.current, texto: tarefa }]
         })
         idTarefa.current++
+        setTarefa('')
+        inputRef.current.focus()
     }
 
     function limparTarefas() {
@@ -36,7 +39,7 @@ export default function App() {
         <>
             <h3>Gerenciador de Tarefas</h3>
             <hr />
-            <input type="text" value={tarefa} onChange={e => setTarefa(e.target.value)} />
+            <input ref={inputRef} type="text" value={tarefa} onChange={e => setTarefa(e.target.value)} />
             <div>
                 <button onClick={adicionarTarefa} >Adicionar</button>
                 <button onClick={limparTarefas}>Limpar Tudo</button>
