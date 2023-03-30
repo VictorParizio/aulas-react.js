@@ -2,27 +2,34 @@ import React, { useState, useRef } from "react";
 
 export default function App() {
 
-    const [listaTarefas, setListaTarefas] = useState(()=> {
+    const [listaTarefas, setListaTarefas] = useState(() => {
         return []
     })
-    const [tarefa, setTarefa] = useState(()=> {
+    const [tarefa, setTarefa] = useState(() => {
         return ''
     })
 
     const idTarefa = useRef(0)
 
-    function adicionarTarefa(){
+    function adicionarTarefa() {
         setListaTarefas(old => {
-            return [...old, {id: idTarefa.current, texto: tarefa}]
+            return [...old, { id: idTarefa.current, texto: tarefa }]
         })
         idTarefa.current++
     }
 
-    function limparTarefas(){
+    function limparTarefas() {
         setListaTarefas(old => {
             return []
         })
         idTarefa.current = 0
+    }
+
+    function removerTarefa(id) {
+        const tmp = listaTarefas.filter(t =>
+            t.id !== id 
+        )
+        setListaTarefas(tmp)
     }
 
     return (
@@ -36,8 +43,8 @@ export default function App() {
             </div>
             <hr />
             <p>Tarefas:</p>
-            {listaTarefas.map((t)=>{
-                return <p key={t.id}>{t.texto}</p>
+            {listaTarefas.map((t) => {
+                return <p key={t.id}>{t.texto} <span onClick={() => { removerTarefa(t.id) }}> - excluir</span></p>
             })}
         </>
     )
