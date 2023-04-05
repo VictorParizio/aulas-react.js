@@ -1,17 +1,20 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { React, useState } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Header from './Componentes/Header'
 import Home from './Componentes/Home'
 import Services from './Componentes/Services'
-import Contato from './Componentes/Contato'
-import Erro from './Componentes/Erro'
 import About from './Componentes/About'
+import Contato from './Componentes/Contato'
+import AreaReservada from './Componentes/AreaReservada'
+import Erro from './Componentes/Erro'
 import Footer from './Componentes/Footer'
 
 export default function App() {
+
+  const [logado] = useState(false)
   return (
     <>
       <Header />
@@ -21,6 +24,13 @@ export default function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/contato' element={<Contato />} />
         <Route path='/about' element={<About />} />
+
+        <Route
+          path='/area_reservada'
+          element={
+            logado ? <AreaReservada /> : <Navigate to='/' />
+          } />
+
         <Route path='/*' element={<Erro />} />
       </Routes>
 
