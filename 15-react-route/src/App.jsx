@@ -23,7 +23,7 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/services' element={<Services />} />
         <Route path='/contato' element={<Contato />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/about/:servico/:teste' element={<About />} />
 
         <Route
           path='/area_reservada'
