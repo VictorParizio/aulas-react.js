@@ -1,6 +1,9 @@
 import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/js/bootstrap.bundle'
+
 import Home from './Componentes/Home'
 import Services from './Componentes/Services'
 import Contato from './Componentes/Contato'
@@ -11,10 +14,14 @@ export default function App() {
     <>
       <h1>React Router App!</h1>
 
-      <nav>
-        <Link to='/'>Home</Link> | 
-        <Link to='/services'>Services</Link> | 
-        <Link to='/contato'>Contato</Link>
+      <nav className='container'>
+        <div className="row">
+          <div className="col text-center">
+            <Link className='btn btn-primary me-3' to='/'>Home</Link>
+            <Link className='btn btn-primary me-3' to='/services'>Services</Link>
+            <Link className='btn btn-primary' to='/contato'>Contato</Link>
+          </div>
+        </div>
       </nav>
 
       <Routes>
