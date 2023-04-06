@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -21,7 +21,7 @@ export default function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/services' element={<Services />} />
+        <Route path='/services/*' element={<Services />}/>
         <Route path='/contato' element={<Contato />} />
         <Route path='/about/:servico/:teste' element={<About />} />
 
