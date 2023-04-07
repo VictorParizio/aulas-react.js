@@ -1,11 +1,20 @@
+import AuthContext from '../providers/AuthContext'
+import { useContext } from 'react'
 
+export default function Login() {
 
-export default function Login({login}) {
+    const AuthDados = useContext(AuthContext)
+
+    function alterarLogin() {
+        AuthDados.setUsuario({
+            usuario: 'Ana',
+            perfil: 'user'
+        })
+    }
+
     return (
         <>
-            <button onClick={()=>{
-                login('Antônio')
-            }} >Login</button>
+            <button onClick={alterarLogin}>Login</button>
         </>
     )
 }
