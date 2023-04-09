@@ -17,7 +17,7 @@ useEffect(() => {
 return (
   <>
     <h1>React - Featch Data</h1>
-    <hr />
+    <hr />z
     <p>Nome dos Clientes: {cliente.nome}</p>
     <p>Nome dos Email: {cliente.email}</p>
     <p>Nome dos Idade: {cliente.idade}</p>
